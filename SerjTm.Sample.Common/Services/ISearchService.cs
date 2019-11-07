@@ -16,6 +16,6 @@ namespace SerjTm.Sample.Common.Services
 
     public interface ISearchService
     {
-        IEnumerable<Tour> Search(City startCity, City city, DateTime startDate, int minDays, int maxDays, int peopleCount, SearchOrder order);
+        IEnumerable<Tour> Search(City startCity, City city, DateTime? startDate, int? minDays, int? maxDays, int? peopleCount, SearchOrder? order);
     }
 }

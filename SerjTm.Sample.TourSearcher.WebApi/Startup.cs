@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using SerjTm.Sample.Common.Services;
+using SerjTm.Sample.TuiProvider.Services;
+using SerjTm.Sample.TuiProvider.Storages;
 
 namespace SerjTm.Sample.TourSearcher.WebApi
 {
@@ -26,6 +29,12 @@ namespace SerjTm.Sample.TourSearcher.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSwaggerDocument();
+
+            services.AddSingleton<ImmutableMemoryStorage>(new ImmutableMemoryStorage());
+            services.AddScoped<IDictService, ImmutableMemoryDictService>();
+            services.AddScoped<ISearchService, ImmutableMemorySearchService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +49,9 @@ namespace SerjTm.Sample.TourSearcher.WebApi
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             app.UseHttpsRedirection();
             app.UseMvc();

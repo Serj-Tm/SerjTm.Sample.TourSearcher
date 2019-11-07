@@ -15,12 +15,17 @@ namespace SerjTm.Sample.Common.Services
         /// Все возможные города, как города вылета, так и города туров
         /// </summary>
         /// <returns></returns>
-        IEnumerable<Country> Cities();
+        IEnumerable<City> Cities();
+
+        IEnumerable<Hotel> Hotels();
+
         /// <summary>
         /// Поиск отеля по Id
         /// </summary>
         /// <param name="id">id отеля</param>
         /// <returns>null - если не найден</returns>
         Hotel FindHotel(Guid id);
+
+
     }
 }
