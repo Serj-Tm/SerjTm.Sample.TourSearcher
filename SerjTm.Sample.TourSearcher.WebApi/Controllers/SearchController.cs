@@ -11,16 +11,45 @@ namespace SerjTm.Sample.TourSearcher.WebApi.Controllers
     [ApiController]
     public class SearchController : ControllerBase
     {
-        public SearchController(ISearchService searchService)
+        public SearchController(ISearchService searchService, IDictService dictService)
         {
             this.searchService = searchService;
+            this.dictService = dictService;
         }
         public readonly ISearchService searchService;
+        public readonly IDictService dictService;
 
-        [HttpGet("api/search")]
-        public ActionResult<IEnumerable<Tour>> Search()
+        [HttpPost("api/search")]
+        public ActionResult<IEnumerable<Tour>> Search(SearchRequest request)
         {
-            return Ok(searchService.Search(null, null, null, null, null, null, null));
+            var startCity = request.StartCity != null ? dictService.FindCity(request.StartCity.Id) : null;
+            if (request.StartCity != null && startCity == null)
+                return BadRequest("Invalid argument StartCity.Id");//TODO улучшить сообщение об ошибке
+            var city = request.City != null ? dictService.FindCity(request.City.Id) : null;
+            if (request.City != null && city == null)
+                return BadRequest("Invalid argument City.Id");//TODO улучшить сообщение об ошибке
+
+            return Ok(searchService.Search(startCity, city, request.StartDate, request.MinDays, request.MaxDays, request.PeopleCount, request.Order));
         }
     }
+
+    public class SearchRequest
+    {
+        public SearchRequest_City StartCity;
+        public SearchRequest_City City;
+        public DateTime? StartDate;
+        public int? MinDays;
+        public int? MaxDays;
+        public int? PeopleCount;
+        public SearchOrder? Order;
+    }
+    public class SearchRequest_Hotel
+    {
+        public Guid Id;
+    }
+    public class SearchRequest_City
+    {
+        public Guid Id;
+    }
+
 }
