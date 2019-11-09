@@ -1,5 +1,6 @@
 ﻿using SerjTm.Sample.Common.Model;
 using SerjTm.Sample.Common.Services;
+using SerjTm.Sample.TourSearcher.Common.Specifications;
 using SerjTm.Sample.TourSearcher.OtherProvider.Storages;
 using System;
 using System.Collections.Generic;
@@ -24,31 +25,11 @@ namespace SerjTm.Sample.TourSearcher.OtherProvider.Services
                 .Where(tour => (minDays == null || minDays <= tour.Days) && (maxDays == null || tour.Days <= maxDays))
                 .Where(tour => peopleCount == null || peopleCount <= tour.MaxRoomPeopleCount)
                 .Select(tour => tour.With(fullPrice: tour.PriceByOnePeople * (peopleCount ?? 1)))
-                .OrderBy(order ?? SearchOrder.byName)
+                .OrderBy(order)
                 .Take(1000)
                 .ToArray();
         }
     }
 
-    public static class TourHlp
-    {
-        public static IOrderedEnumerable<Tour> OrderBy(this IEnumerable<Tour> items, SearchOrder order)
-        {
-            switch (order)
-            {
-                case SearchOrder.byName:
-                    return items.OrderBy(item => item.Hotel.Name);
-                case SearchOrder.byPrice:
-                    return items.OrderBy(item => item.FullPrice);
-                case SearchOrder.byPriceDesc:
-                    return items.OrderByDescending(item => item.FullPrice);
-                case SearchOrder.byDate:
-                    return items.OrderBy(item => item.StartDate);
-                case SearchOrder.byDateDesc:
-                    return items.OrderByDescending(item => item.StartDate);
-                default:
-                    throw new ArgumentException($"Значение {order} не поддерживается(не реализовано)", "order");
-            }
-        }
-    }
+ 
 }

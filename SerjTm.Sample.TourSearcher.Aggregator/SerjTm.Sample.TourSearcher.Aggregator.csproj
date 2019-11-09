@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NitroBolt.Functional" Version="1.0.46" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SerjTm.Sample.Common\SerjTm.Sample.Common.csproj" />
   </ItemGroup>
 
