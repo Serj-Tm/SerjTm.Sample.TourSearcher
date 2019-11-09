@@ -7,13 +7,13 @@ using System.Linq;
 
 namespace SerjTm.Sample.TuiProvider.Services
 {
-    public class ImmutableMemorySearchService : ISearchService
+    public class MemorySearchService : ISearchService
     {
-        public ImmutableMemorySearchService(ImmutableMemoryStorage storage)
+        public MemorySearchService(MemoryTourStorage storage)
         {
             this.Storage = storage;
         }
-        private readonly ImmutableMemoryStorage Storage;
+        private readonly MemoryTourStorage Storage;
 
         public IEnumerable<Tour> Search(ICity_Id startCity, ICity_Id city, DateTime? startDate, int? minDays, int? maxDays, int? peopleCount, SearchOrder? order)
         {

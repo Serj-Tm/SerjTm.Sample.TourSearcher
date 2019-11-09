@@ -1,19 +1,24 @@
 ﻿using SerjTm.Sample.Common.Model;
 using System;
+using System.Collections.Immutable;
 using System.Linq;
 
 namespace SerjTm.Sample.TourSearcher.Imitator
 {
     public class ImitatorService
     {
-        public static (Country[], City[], Hotel[], Tour[]) Imitate(string provider)
+        public static (ImmutableArray<Country> countries, ImmutableArray<City> cities, ImmutableArray<Hotel> hotels) ImitateDict()
         {
             var countries = GenerateCountries();
             var cities = GenerateCities(countries);
             var hotels = GenerateHotels(cities);
-            var tours = GenerateTours(provider, cities, hotels);
 
-            return (countries, cities, hotels, tours);
+            return (countries.ToImmutableArray(), cities.ToImmutableArray(), hotels.ToImmutableArray());
+        }
+        public static ImmutableArray<Tour> ImitateTours(string provider,
+            (ImmutableArray<Country> countries, ImmutableArray<City> cities, ImmutableArray<Hotel> hotels) props)
+        {
+            return GenerateTours(provider, props.cities.ToArray(), props.hotels.ToArray()).ToImmutableArray();
         }
 
         static Country[] GenerateCountries() => Enumerable.Range(1, 200).Select(i => new Country(i, $"Country_{i}")).ToArray();

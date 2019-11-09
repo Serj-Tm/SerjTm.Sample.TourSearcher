@@ -12,8 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SerjTm.Sample.Common.Services;
 using SerjTm.Sample.TourSearcher.Aggregator;
-using SerjTm.Sample.TuiProvider.Services;
-using SerjTm.Sample.TuiProvider.Storages;
+using SerjTm.Sample.TourSearcher.Imitator;
 
 namespace SerjTm.Sample.TourSearcher.WebApi
 {
@@ -37,9 +36,19 @@ namespace SerjTm.Sample.TourSearcher.WebApi
 
             services.AddSwaggerDocument();
 
-            services.AddSingleton<ImmutableMemoryStorage>(new ImmutableMemoryStorage());
-            services.AddScoped<IDictService, ImmutableMemoryDictService>();
-            services.AddScoped<ISearchService, ImmutableMemorySearchService>();
+            var imitationDict = ImitatorService.ImitateDict();
+
+            services.AddSingleton<TuiProvider.Storages.MemoryDictStorage>(new TuiProvider.Storages.MemoryDictStorage(imitationDict));
+            services.AddScoped<IDictService, TuiProvider.Services.MemoryDictService>();
+
+            services.AddSingleton<TuiProvider.Storages.MemoryTourStorage>(
+                new TuiProvider.Storages.MemoryTourStorage(ImitatorService.ImitateTours("Tui", imitationDict)));
+            services.AddScoped<ISearchService, TuiProvider.Services.MemorySearchService>();
+
+            //services.AddSingleton<OtherProvider.Storages.MemoryTourStorage>(
+            //    new OtherProvider.Storages.MemoryTourStorage(ImitatorService.ImitateTours("Other", imitationDict)));
+            //services.AddScoped<ISearchService, OtherProvider.Services.MemorySearchService>();
+
             services.AddScoped<AggregatorService, AggregatorService>();
         }
 

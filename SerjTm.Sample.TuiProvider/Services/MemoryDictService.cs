@@ -7,13 +7,13 @@ using System.Linq;
 
 namespace SerjTm.Sample.TuiProvider.Services
 {
-    public class ImmutableMemoryDictService : IDictService
+    public class MemoryDictService : IDictService
     {
-        public ImmutableMemoryDictService(ImmutableMemoryStorage storage)
+        public MemoryDictService(MemoryDictStorage storage)
         {
             this.Storage = storage;
         }
-        public readonly ImmutableMemoryStorage Storage;
+        public readonly MemoryDictStorage Storage;
 
         public IEnumerable<City> StartCities()
         {
