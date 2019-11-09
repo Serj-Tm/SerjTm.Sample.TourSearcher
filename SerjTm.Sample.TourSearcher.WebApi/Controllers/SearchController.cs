@@ -5,13 +5,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SerjTm.Sample.Common.Model;
 using SerjTm.Sample.Common.Services;
+using SerjTm.Sample.TourSearcher.Aggregator;
 
 namespace SerjTm.Sample.TourSearcher.WebApi.Controllers
 {
     [ApiController]
     public class SearchController : ControllerBase
     {
-        public SearchController(ISearchService searchService)
+        public SearchController(AggregatorService searchService)
         {
             this.searchService = searchService;
         }

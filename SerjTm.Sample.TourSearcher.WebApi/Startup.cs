@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SerjTm.Sample.Common.Services;
+using SerjTm.Sample.TourSearcher.Aggregator;
 using SerjTm.Sample.TuiProvider.Services;
 using SerjTm.Sample.TuiProvider.Storages;
 
@@ -39,6 +40,7 @@ namespace SerjTm.Sample.TourSearcher.WebApi
             services.AddSingleton<ImmutableMemoryStorage>(new ImmutableMemoryStorage());
             services.AddScoped<IDictService, ImmutableMemoryDictService>();
             services.AddScoped<ISearchService, ImmutableMemorySearchService>();
+            services.AddScoped<AggregatorService, AggregatorService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
