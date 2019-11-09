@@ -45,9 +45,9 @@ namespace SerjTm.Sample.TourSearcher.WebApi
                 new TuiProvider.Storages.MemoryTourStorage(ImitatorService.ImitateTours("Tui", imitationDict)));
             services.AddScoped<ISearchService, TuiProvider.Services.MemorySearchService>();
 
-            //services.AddSingleton<OtherProvider.Storages.MemoryTourStorage>(
-            //    new OtherProvider.Storages.MemoryTourStorage(ImitatorService.ImitateTours("Other", imitationDict)));
-            //services.AddScoped<ISearchService, OtherProvider.Services.MemorySearchService>();
+            services.AddSingleton<OtherProvider.Storages.MemoryTourStorage>(
+                new OtherProvider.Storages.MemoryTourStorage(ImitatorService.ImitateTours("Other", imitationDict)));
+            services.AddScoped<ISearchService, OtherProvider.Services.MemorySearchService>();
 
             services.AddScoped<AggregatorService, AggregatorService>();
         }
