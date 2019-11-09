@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace SerjTm.Sample.Common.Services
 {
@@ -16,6 +18,6 @@ namespace SerjTm.Sample.Common.Services
 
     public interface ISearchService
     {
-        IEnumerable<Tour> Search(ICity_Id startCity, ICity_Id city, DateTime? startDate, int? minDays, int? maxDays, int? peopleCount, SearchOrder? order);
+        Task<IEnumerable<Tour>> Search(ICity_Id startCity, ICity_Id city, DateTime? startDate, int? minDays, int? maxDays, int? peopleCount, SearchOrder? order, CancellationToken token);
     }
 }

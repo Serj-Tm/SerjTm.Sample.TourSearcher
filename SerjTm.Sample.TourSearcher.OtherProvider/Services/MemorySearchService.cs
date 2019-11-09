@@ -5,6 +5,8 @@ using SerjTm.Sample.TourSearcher.OtherProvider.Storages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace SerjTm.Sample.TourSearcher.OtherProvider.Services
 {
@@ -16,8 +18,10 @@ namespace SerjTm.Sample.TourSearcher.OtherProvider.Services
         }
         private readonly MemoryTourStorage Storage;
 
-        public IEnumerable<Tour> Search(ICity_Id startCity, ICity_Id city, DateTime? startDate, int? minDays, int? maxDays, int? peopleCount, SearchOrder? order)
+        public async Task<IEnumerable<Tour>> Search(ICity_Id startCity, ICity_Id city, DateTime? startDate, int? minDays, int? maxDays, int? peopleCount, SearchOrder? order, CancellationToken token)
         {
+            await Task.Delay(TimeSpan.FromSeconds(3 + new Random().NextDouble() * 14), token);
+
             return Storage.Tours
                 .Where(tour => startCity == null || tour.StartCity.Id == startCity.Id)
                 .Where(tour => city == null || tour.Hotel.City.Id == city.Id)

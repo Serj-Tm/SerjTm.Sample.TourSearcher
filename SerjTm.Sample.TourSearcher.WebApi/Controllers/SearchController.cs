@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SerjTm.Sample.Common.Model;
@@ -19,9 +20,9 @@ namespace SerjTm.Sample.TourSearcher.WebApi.Controllers
         public readonly ISearchService searchService;
 
         [HttpPost("api/search")]
-        public ActionResult<IEnumerable<Tour>> Search(SearchRequest request)
+        public async Task<ActionResult<IEnumerable<Tour>>> Search(SearchRequest request, CancellationToken token)
         {
-            return Ok(searchService.Search(request.StartCity, request.City, request.StartDate, request.MinDays, request.MaxDays, request.PeopleCount, request.Order));
+            return Ok(await searchService.Search(request.StartCity, request.City, request.StartDate, request.MinDays, request.MaxDays, request.PeopleCount, request.Order, token));
         }
     }
 
