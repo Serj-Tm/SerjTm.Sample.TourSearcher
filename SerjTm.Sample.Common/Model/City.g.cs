@@ -12,14 +12,14 @@ namespace SerjTm.Sample.Common.Model
 {
     partial class City
     {
-        public City(Guid id, Country country, string name)
+        public City(int id, Country country, string name)
         {
             Id = id;
             Country = country;
             Name = name;
         }
 
-        public City With(Guid? id = null, Country country = null, string name = null)
+        public City With(int ? id = null, Country country = null, string name = null)
         {
             return new City(id ?? Id, country ?? Country, name ?? Name);
         }
@@ -27,7 +27,7 @@ namespace SerjTm.Sample.Common.Model
 
     public static partial class CityHelper
     {
-        public static City By(this IEnumerable<City> items, Guid? id = null, Country country = null, string name = null)
+        public static City By(this IEnumerable<City> items, int ? id = null, Country country = null, string name = null)
         {
             if (id != null)
                 return items.FirstOrDefault(_item => _item.Id == id);
@@ -35,6 +35,29 @@ namespace SerjTm.Sample.Common.Model
                 return items.FirstOrDefault(_item => _item.Country == country);
             if (name != null)
                 return items.FirstOrDefault(_item => _item.Name == name);
+            return null;
+        }
+    }
+
+    partial class City_Id
+    {
+        public City_Id(int id)
+        {
+            Id = id;
+        }
+
+        public City_Id With(int ? id = null)
+        {
+            return new City_Id(id ?? Id);
+        }
+    }
+
+    public static partial class City_IdHelper
+    {
+        public static City_Id By(this IEnumerable<City_Id> items, int ? id = null)
+        {
+            if (id != null)
+                return items.FirstOrDefault(_item => _item.Id == id);
             return null;
         }
     }

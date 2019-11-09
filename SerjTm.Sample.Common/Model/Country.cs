@@ -6,7 +6,7 @@ namespace SerjTm.Sample.Common.Model
 {
     public partial class Country
     {
-        public readonly Guid Id = Guid.NewGuid(); 
+        public readonly int Id; 
         public readonly string Name;
     }
 }

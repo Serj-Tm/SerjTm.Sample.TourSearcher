@@ -12,13 +12,13 @@ namespace SerjTm.Sample.Common.Model
 {
     partial class Country
     {
-        public Country(Guid? id, string name)
+        public Country(int id, string name)
         {
-            Id = id ?? Id;
+            Id = id;
             Name = name;
         }
 
-        public Country With(Guid? id = null, string name = null)
+        public Country With(int ? id = null, string name = null)
         {
             return new Country(id ?? Id, name ?? Name);
         }
@@ -26,7 +26,7 @@ namespace SerjTm.Sample.Common.Model
 
     public static partial class CountryHelper
     {
-        public static Country By(this IEnumerable<Country> items, Guid? id = null, string name = null)
+        public static Country By(this IEnumerable<Country> items, int ? id = null, string name = null)
         {
             if (id != null)
                 return items.FirstOrDefault(_item => _item.Id == id);

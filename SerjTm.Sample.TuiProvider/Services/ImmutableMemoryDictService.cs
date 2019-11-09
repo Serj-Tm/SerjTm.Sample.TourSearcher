@@ -40,10 +40,6 @@ namespace SerjTm.Sample.TuiProvider.Services
         {
             return Storage.Hotels.By(id: id);
         }
-        public City FindCity(Guid id)
-        {
-            return Storage.Cities.By(id: id);
-        }
     }
 
 }

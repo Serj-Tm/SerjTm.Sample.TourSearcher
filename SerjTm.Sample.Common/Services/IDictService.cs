@@ -26,12 +26,6 @@ namespace SerjTm.Sample.Common.Services
         /// <returns>null - если не найден</returns>
         Hotel FindHotel(Guid id);
 
-        /// <summary>
-        /// Поиск города по Id
-        /// </summary>
-        /// <param name="id">id города</param>
-        /// <returns>null - если не найден</returns>
-        City FindCity(Guid id);
 
     }
 }

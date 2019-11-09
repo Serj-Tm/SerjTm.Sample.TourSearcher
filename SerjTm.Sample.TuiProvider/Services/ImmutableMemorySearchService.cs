@@ -15,7 +15,7 @@ namespace SerjTm.Sample.TuiProvider.Services
         }
         private readonly ImmutableMemoryStorage Storage;
 
-        public IEnumerable<Tour> Search(City startCity, City city, DateTime? startDate, int? minDays, int? maxDays, int? peopleCount, SearchOrder? order)
+        public IEnumerable<Tour> Search(ICity_Id startCity, ICity_Id city, DateTime? startDate, int? minDays, int? maxDays, int? peopleCount, SearchOrder? order)
         {
             return Storage.Tours
                 .Where(tour => startCity == null || tour.StartCity.Id == startCity.Id)

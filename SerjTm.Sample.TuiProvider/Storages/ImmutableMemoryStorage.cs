@@ -22,14 +22,14 @@ namespace SerjTm.Sample.TuiProvider.Storages
         public readonly Tour[] Tours;
 
 
-        static Country[] GenerateCountries() => Enumerable.Range(1, 200).Select(i => new Country(Guid.NewGuid(), $"Country_{i}")).ToArray();
+        static Country[] GenerateCountries() => Enumerable.Range(1, 200).Select(i => new Country(i, $"Country_{i}")).ToArray();
 
         static City[] GenerateCities(Country[] countries)
         {
             var rnd = new Random();
 
             return Enumerable.Range(1, 1_000)
-                .Select(i => new City(Guid.NewGuid(), countries.ByRandom(rnd), $"City_{i}"))
+                .Select(i => new City(i, countries.ByRandom(rnd), $"City_{i}"))
                 .ToArray();
         }
         static Hotel[] GenerateHotels(City[] cities)
