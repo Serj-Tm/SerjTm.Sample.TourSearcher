@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SerjTm.Sample.Common.Model;
+using static SerjTm.Sample.TourSearcher.Common.Model.TourCategory;
 using SerjTm.Sample.Common.Services;
 using SerjTm.Sample.TourSearcher.Aggregator;
 
@@ -22,7 +23,12 @@ namespace SerjTm.Sample.TourSearcher.WebApi.Controllers
         [HttpPost("api/search")]
         public async Task<ActionResult<IEnumerable<Tour>>> Search(SearchRequest request, CancellationToken token)
         {
-            return Ok(await searchService.Search(request.StartCity, request.City, request.StartDate, request.MinDays, request.MaxDays, request.PeopleCount, request.Order, token));
+            var filter = StartCity(request.StartCity) 
+                & City(request.City) 
+                & StartDate(request.StartDate)
+                & DaysRange(request.MinDays, request.MaxDays);
+
+            return Ok(await searchService.Search(request.PeopleCount, filter, request.Order, token));
         }
     }
 

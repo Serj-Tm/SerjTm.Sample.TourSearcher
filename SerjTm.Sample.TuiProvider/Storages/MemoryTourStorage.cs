@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Collections.Immutable;
 
-namespace SerjTm.Sample.TuiProvider.Storages
+namespace SerjTm.Sample.TourSearcher.TuiProvider.Storages
 {
     public class MemoryTourStorage
     {

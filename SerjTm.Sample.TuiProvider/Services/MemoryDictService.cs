@@ -1,11 +1,11 @@
 ﻿using SerjTm.Sample.Common.Model;
 using SerjTm.Sample.Common.Services;
-using SerjTm.Sample.TuiProvider.Storages;
+using SerjTm.Sample.TourSearcher.TuiProvider.Storages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SerjTm.Sample.TuiProvider.Services
+namespace SerjTm.Sample.TourSearcher.TuiProvider.Services
 {
     public class MemoryDictService : IDictService
     {

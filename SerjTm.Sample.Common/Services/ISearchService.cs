@@ -1,4 +1,5 @@
 ﻿using SerjTm.Sample.Common.Model;
+using SerjTm.Sample.TourSearcher.Common.Specifications;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,6 +19,6 @@ namespace SerjTm.Sample.Common.Services
 
     public interface ISearchService
     {
-        Task<IEnumerable<Tour>> Search(ICity_Id startCity, ICity_Id city, DateTime? startDate, int? minDays, int? maxDays, int? peopleCount, SearchOrder? order, CancellationToken token);
+        Task<IEnumerable<Tour>> Search(int? peopleCount, FilterSpecification<Tour> filter, SearchOrder? order, CancellationToken token);
     }
 }

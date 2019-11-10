@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using Moq;
 using SerjTm.Sample.Common.Model;
+using static SerjTm.Sample.TourSearcher.Common.Model.TourCategory;
 using SerjTm.Sample.Common.Services;
 using SerjTm.Sample.TourSearcher.Aggregator;
 using System;
@@ -36,13 +37,13 @@ namespace SerjTm.Sample.TourSearcher.Tests
             var cancellation = new CancellationTokenSource().Token;
 
             var searcher1 = new Mock<ISearchService>();
-            searcher1.Setup(mock => mock.Search(null, null, null, null, null, null, null, It.IsAny<CancellationToken>()))
+            searcher1.Setup(mock => mock.Search(null, null, null, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(new[] {tour1}, TimeSpan.FromSeconds(0.25));
             var searcher2 = new Mock<ISearchService>();
-            searcher2.Setup(mock => mock.Search(null, null, null, null, null, null, null, It.IsAny<CancellationToken>()))
+            searcher2.Setup(mock => mock.Search(null, null, null, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(new[] { tour1, tour2 }, TimeSpan.FromSeconds(0.25));
             var slowSearcher1 = new Mock<ISearchService>();
-            slowSearcher1.Setup(mock => mock.Search(null, null, null, null, null, null, null, It.IsAny<CancellationToken>()))
+            slowSearcher1.Setup(mock => mock.Search(null, null, null, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(new[] { tour1, tour2 }, TimeSpan.FromSeconds(3));
 
             var aggregator = new AggregatorService(new[] { searcher1.Object, searcher2.Object, slowSearcher1.Object }, configuration);
@@ -50,7 +51,7 @@ namespace SerjTm.Sample.TourSearcher.Tests
             var watch = new Stopwatch();
             watch.Start();
 
-            var result = await aggregator.Search(null, null, null, null, null, null, null, cancellation);
+            var result = await aggregator.Search(null, null, null, cancellation);
 
             Assert.Equal(new[] { tour1, tour2 }, result);
             Assert.InRange(watch.Elapsed.TotalSeconds, 0.3, 0.4);
@@ -85,15 +86,15 @@ namespace SerjTm.Sample.TourSearcher.Tests
             var cancellation = new CancellationTokenSource().Token;
 
             var searcher1 = new Mock<ISearchService>();
-            searcher1.Setup(mock => mock.Search(null, null, null, null, null, null, null, It.IsAny<CancellationToken>()))
+            searcher1.Setup(mock => mock.Search(null, null, null, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(new[] { tour_other_lowExtraPrice, tour_other_highExtraPrice });
             var searcher2 = new Mock<ISearchService>();
-            searcher2.Setup(mock => mock.Search(null, null, null, null, null, null, null, It.IsAny<CancellationToken>()))
+            searcher2.Setup(mock => mock.Search(null, null, null, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(new[] { tour_tui_lowExtraPrice, tour_tui_highExtraPrice });
 
             var aggregator = new AggregatorService(new[] { searcher1.Object, searcher2.Object}, configuration);
 
-            var result = await aggregator.Search(null, null, null, null, null, null, null, cancellation);
+            var result = await aggregator.Search(null, null, null, cancellation);
 
             Assert.Equal(new[] 
                 {
@@ -102,5 +103,8 @@ namespace SerjTm.Sample.TourSearcher.Tests
                 }, 
                 result);
         }
+
+
+
     }
 }

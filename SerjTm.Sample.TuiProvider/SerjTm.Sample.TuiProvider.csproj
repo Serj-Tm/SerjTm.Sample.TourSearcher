@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>SerjTm.Sample.TourSearcher.TuiProvider</RootNamespace>
+    <AssemblyName>SerjTm.Sample.TourSearcher.TuiProvider</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
