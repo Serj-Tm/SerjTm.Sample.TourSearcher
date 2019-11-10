@@ -20,7 +20,7 @@ namespace SerjTm.Sample.TourSearcher.Tests
         {
             var config = new Dictionary<string, string>
             {
-                {"aggregator:search:timeout", "0.3"},
+                {"Aggregator:Search:Timeout", "0.3"},
             };
 
             var configuration = new ConfigurationBuilder()
