@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SerjTm.Sample.Common\SerjTm.Sample.TourSearcher.Common.csproj" />
+    <ProjectReference Include="..\SerjTm.Sample.TourSearcher.Common\SerjTm.Sample.TourSearcher.Common.csproj" />
   </ItemGroup>
 
 </Project>

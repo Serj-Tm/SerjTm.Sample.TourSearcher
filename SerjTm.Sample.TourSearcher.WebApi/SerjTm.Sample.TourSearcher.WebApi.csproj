@@ -18,7 +18,7 @@
     <ProjectReference Include="..\SerjTm.Sample.TourSearcher.Aggregator\SerjTm.Sample.TourSearcher.Aggregator.csproj" />
     <ProjectReference Include="..\SerjTm.Sample.TourSearcher.Imitator\SerjTm.Sample.TourSearcher.Imitator.csproj" />
     <ProjectReference Include="..\SerjTm.Sample.TourSearcher.OtherProvider\SerjTm.Sample.TourSearcher.OtherProvider.csproj" />
-    <ProjectReference Include="..\SerjTm.Sample.TuiProvider\SerjTm.Sample.TourSearcher.TuiProvider.csproj" />
+    <ProjectReference Include="..\SerjTm.Sample.TourSearcher.TuiProvider\SerjTm.Sample.TourSearcher.TuiProvider.csproj" />
   </ItemGroup>
 
 </Project>
