@@ -37,10 +37,10 @@ namespace SerjTm.Sample.TourSearcher.Tests
 
             var searcher1 = new Mock<ISearchService>();
             searcher1.Setup(mock => mock.Search(null, null, null, null, null, null, null, It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new[] {tour1}, TimeSpan.FromSeconds(0.2));
+                .ReturnsAsync(new[] {tour1}, TimeSpan.FromSeconds(0.25));
             var searcher2 = new Mock<ISearchService>();
             searcher2.Setup(mock => mock.Search(null, null, null, null, null, null, null, It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new[] { tour1, tour2 }, TimeSpan.FromSeconds(0.2));
+                .ReturnsAsync(new[] { tour1, tour2 }, TimeSpan.FromSeconds(0.25));
             var slowSearcher1 = new Mock<ISearchService>();
             slowSearcher1.Setup(mock => mock.Search(null, null, null, null, null, null, null, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(new[] { tour1, tour2 }, TimeSpan.FromSeconds(3));
