@@ -16,7 +16,7 @@ namespace SerjTm.Sample.TourSearcher.Aggregator
         public AggregatorService(IEnumerable<ISearchService> searchers, IConfiguration configuration)
         {
             this.searchers = searchers;
-            this.SearchTimeout = TimeSpan.FromSeconds(configuration.GetValue<double>("aggregator.search.timeout", 15));
+            this.SearchTimeout = TimeSpan.FromSeconds(configuration.GetValue<double>("aggregator:search:timeout", 15));
         }
         readonly IEnumerable<ISearchService> searchers;
         readonly TimeSpan SearchTimeout;

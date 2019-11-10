@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TuiProvider",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.Aggregator", "SerjTm.Sample.TourSearcher.Aggregator\SerjTm.Sample.TourSearcher.Aggregator.csproj", "{9215D80A-81BB-4EC9-BACC-E28E0DCF2F35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerjTm.Sample.TourSearcher.Imitator", "SerjTm.Sample.TourSearcher.Imitator\SerjTm.Sample.TourSearcher.Imitator.csproj", "{761822B7-9EFB-4E1F-95DD-6F7902430E78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.Imitator", "SerjTm.Sample.TourSearcher.Imitator\SerjTm.Sample.TourSearcher.Imitator.csproj", "{761822B7-9EFB-4E1F-95DD-6F7902430E78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerjTm.Sample.TourSearcher.OtherProvider", "SerjTm.Sample.TourSearcher.OtherProvider\SerjTm.Sample.TourSearcher.OtherProvider.csproj", "{7E82CF57-9AA3-45FD-994B-5FC218398DCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.OtherProvider", "SerjTm.Sample.TourSearcher.OtherProvider\SerjTm.Sample.TourSearcher.OtherProvider.csproj", "{7E82CF57-9AA3-45FD-994B-5FC218398DCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerjTm.Sample.TourSearcher.Tests", "SerjTm.Sample.TourSearcher.Tests\SerjTm.Sample.TourSearcher.Tests.csproj", "{EF05393E-4E02-4B68-A34B-A1320B53A68D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{7E82CF57-9AA3-45FD-994B-5FC218398DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E82CF57-9AA3-45FD-994B-5FC218398DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E82CF57-9AA3-45FD-994B-5FC218398DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF05393E-4E02-4B68-A34B-A1320B53A68D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF05393E-4E02-4B68-A34B-A1320B53A68D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF05393E-4E02-4B68-A34B-A1320B53A68D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF05393E-4E02-4B68-A34B-A1320B53A68D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
