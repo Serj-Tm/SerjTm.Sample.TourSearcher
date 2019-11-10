@@ -1,8 +1,8 @@
 using Microsoft.Extensions.Configuration;
 using Moq;
-using SerjTm.Sample.Common.Model;
+using SerjTm.Sample.TourSearcher.Common.Model;
 using static SerjTm.Sample.TourSearcher.Common.Model.TourCategory;
-using SerjTm.Sample.Common.Services;
+using SerjTm.Sample.TourSearcher.Common.Services;
 using SerjTm.Sample.TourSearcher.Aggregator;
 using System;
 using System.Collections.Generic;

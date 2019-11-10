@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.WebApi", "SerjTm.Sample.TourSearcher.WebApi\SerjTm.Sample.TourSearcher.WebApi.csproj", "{E2240EBC-18FB-40AA-AC9B-78080886D8ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.Common", "SerjTm.Sample.Common\SerjTm.Sample.Common.csproj", "{99EA6FE9-03EC-47C6-9B6F-97F684450CD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.Common", "SerjTm.Sample.Common\SerjTm.Sample.TourSearcher.Common.csproj", "{99EA6FE9-03EC-47C6-9B6F-97F684450CD3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TuiProvider", "SerjTm.Sample.TuiProvider\SerjTm.Sample.TuiProvider.csproj", "{0881947D-DEE4-40A4-BCEE-DC969927FF06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.TuiProvider", "SerjTm.Sample.TuiProvider\SerjTm.Sample.TourSearcher.TuiProvider.csproj", "{0881947D-DEE4-40A4-BCEE-DC969927FF06}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.Aggregator", "SerjTm.Sample.TourSearcher.Aggregator\SerjTm.Sample.TourSearcher.Aggregator.csproj", "{9215D80A-81BB-4EC9-BACC-E28E0DCF2F35}"
 EndProject
@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.OtherProvider", "SerjTm.Sample.TourSearcher.OtherProvider\SerjTm.Sample.TourSearcher.OtherProvider.csproj", "{7E82CF57-9AA3-45FD-994B-5FC218398DCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerjTm.Sample.TourSearcher.Tests", "SerjTm.Sample.TourSearcher.Tests\SerjTm.Sample.TourSearcher.Tests.csproj", "{EF05393E-4E02-4B68-A34B-A1320B53A68D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.Tests", "SerjTm.Sample.TourSearcher.Tests\SerjTm.Sample.TourSearcher.Tests.csproj", "{EF05393E-4E02-4B68-A34B-A1320B53A68D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

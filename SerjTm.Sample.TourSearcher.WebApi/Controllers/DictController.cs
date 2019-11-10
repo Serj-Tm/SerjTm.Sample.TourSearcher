@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using SerjTm.Sample.Common.Model;
-using SerjTm.Sample.Common.Services;
+using SerjTm.Sample.TourSearcher.Common.Model;
+using SerjTm.Sample.TourSearcher.Common.Services;
 
 namespace SerjTm.Sample.TourSearcher.WebApi.Controllers
 {

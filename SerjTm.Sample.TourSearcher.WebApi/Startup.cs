@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using SerjTm.Sample.Common.Services;
+using SerjTm.Sample.TourSearcher.Common.Services;
 using SerjTm.Sample.TourSearcher.Aggregator;
 using SerjTm.Sample.TourSearcher.Imitator;
 

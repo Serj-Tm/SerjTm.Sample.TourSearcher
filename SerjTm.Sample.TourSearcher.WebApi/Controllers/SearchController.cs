@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using SerjTm.Sample.Common.Model;
+using SerjTm.Sample.TourSearcher.Common.Model;
 using static SerjTm.Sample.TourSearcher.Common.Model.TourCategory;
-using SerjTm.Sample.Common.Services;
+using SerjTm.Sample.TourSearcher.Common.Services;
 using SerjTm.Sample.TourSearcher.Aggregator;
 
 namespace SerjTm.Sample.TourSearcher.WebApi.Controllers

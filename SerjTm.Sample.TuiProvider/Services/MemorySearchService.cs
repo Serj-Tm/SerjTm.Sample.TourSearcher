@@ -1,5 +1,5 @@
-﻿using SerjTm.Sample.Common.Model;
-using SerjTm.Sample.Common.Services;
+﻿using SerjTm.Sample.TourSearcher.Common.Model;
+using SerjTm.Sample.TourSearcher.Common.Services;
 using static SerjTm.Sample.TourSearcher.Common.Model.TourCategory;
 using SerjTm.Sample.TourSearcher.Common.Specifications;
 using SerjTm.Sample.TourSearcher.TuiProvider.Utilities;

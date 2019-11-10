@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
-using SerjTm.Sample.Common.Model;
+using SerjTm.Sample.TourSearcher.Common.Model;
 using static SerjTm.Sample.TourSearcher.Common.Model.TourCategory;
 using SerjTm.Sample.TourSearcher.TuiProvider.Services;
 using SerjTm.Sample.TourSearcher.TuiProvider.Storages;

@@ -1,4 +1,4 @@
-﻿using SerjTm.Sample.Common.Model;
+﻿using SerjTm.Sample.TourSearcher.Common.Model;
 using SerjTm.Sample.TourSearcher.Common.Specifications;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SerjTm.Sample.Common.Services
+namespace SerjTm.Sample.TourSearcher.Common.Services
 {
     public enum SearchOrder
     {

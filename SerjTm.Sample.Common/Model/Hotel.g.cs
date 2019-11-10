@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SerjTm.Sample.Common.Model
+namespace SerjTm.Sample.TourSearcher.Common.Model
 {
     partial class Hotel
     {
