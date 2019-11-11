@@ -6,10 +6,10 @@ namespace SerjTm.Sample.TourSearcher.Common.Model
 {
     public partial class Hotel
     {
-        public readonly Guid Id;
-        public readonly string Name;
-        public readonly string Address;
-        public readonly City City;
-        public readonly int BuildingYear;
+        public Guid Id { get; private set; }
+        public string Name { get; private set; }
+        public string Address { get; private set; }
+        public City City { get; private set; }
+        public int BuildingYear { get; private set; }
     }
 }

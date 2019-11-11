@@ -14,6 +14,7 @@ namespace SerjTm.Sample.TourSearcher.TuiProvider.Storages
             this.Countries = countries;
             this.Cities = cities;
             this.Hotels = hotels;
+            this.HotelIndex = hotels.ToImmutableDictionary(hotel => hotel.Id);
         }
         public MemoryDictStorage((ImmutableArray<Country> countries, ImmutableArray<City> cities, ImmutableArray<Hotel> hotels) props)
             :this(props.countries, props.cities, props.hotels)
@@ -24,6 +25,7 @@ namespace SerjTm.Sample.TourSearcher.TuiProvider.Storages
         public readonly ImmutableArray<Country> Countries;
         public readonly ImmutableArray<City> Cities;
         public readonly ImmutableArray<Hotel> Hotels;
+        public readonly ImmutableDictionary<Guid, Hotel> HotelIndex;
 
 
  

@@ -6,11 +6,9 @@ namespace SerjTm.Sample.TourSearcher.Common.Model
 {
     public partial class City: ICity_Id
     {
-        public readonly int Id;
-        public readonly Country Country;
-        public readonly string Name;
-
-        int ICity_Id.Id => Id;
+        public int Id { get; private set; }
+        public Country Country { get; private set; }
+        public string Name { get; private set; }
     }
 
     public interface ICity_Id
@@ -20,8 +18,6 @@ namespace SerjTm.Sample.TourSearcher.Common.Model
 
     public partial class City_Id: ICity_Id
     {
-        public readonly int Id;
-
-        int ICity_Id.Id => Id;
+        public int Id { get; private set; }
     }
 }

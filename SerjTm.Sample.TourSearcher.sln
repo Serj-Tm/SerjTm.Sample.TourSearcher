@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.WebApi", "SerjTm.Sample.TourSearcher.WebApi\SerjTm.Sample.TourSearcher.WebApi.csproj", "{E2240EBC-18FB-40AA-AC9B-78080886D8ED}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.Common", "SerjTm.Sample.TourSearcher.Common\SerjTm.Sample.TourSearcher.Common.csproj", "{99EA6FE9-03EC-47C6-9B6F-97F684450CD3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.TuiProvider", "SerjTm.Sample.TourSearcher.TuiProvider\SerjTm.Sample.TourSearcher.TuiProvider.csproj", "{0881947D-DEE4-40A4-BCEE-DC969927FF06}"
@@ -17,16 +15,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.Tests", "SerjTm.Sample.TourSearcher.Tests\SerjTm.Sample.TourSearcher.Tests.csproj", "{EF05393E-4E02-4B68-A34B-A1320B53A68D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerjTm.Sample.TourSearcher.WebApi", "SerjTm.Sample.TourSearcher.WebApi\SerjTm.Sample.TourSearcher.WebApi.csproj", "{B9915E21-749A-4AA0-ADE9-78F8E4C1B3BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E2240EBC-18FB-40AA-AC9B-78080886D8ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2240EBC-18FB-40AA-AC9B-78080886D8ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2240EBC-18FB-40AA-AC9B-78080886D8ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E2240EBC-18FB-40AA-AC9B-78080886D8ED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{99EA6FE9-03EC-47C6-9B6F-97F684450CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{99EA6FE9-03EC-47C6-9B6F-97F684450CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99EA6FE9-03EC-47C6-9B6F-97F684450CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{EF05393E-4E02-4B68-A34B-A1320B53A68D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF05393E-4E02-4B68-A34B-A1320B53A68D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF05393E-4E02-4B68-A34B-A1320B53A68D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9915E21-749A-4AA0-ADE9-78F8E4C1B3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9915E21-749A-4AA0-ADE9-78F8E4C1B3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9915E21-749A-4AA0-ADE9-78F8E4C1B3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9915E21-749A-4AA0-ADE9-78F8E4C1B3BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
-﻿using SerjTm.Sample.TourSearcher.Common.Model;
+﻿using NitroBolt.Functional;
+using SerjTm.Sample.TourSearcher.Common.Model;
 using SerjTm.Sample.TourSearcher.Common.Services;
 using SerjTm.Sample.TourSearcher.TuiProvider.Storages;
 using System;
@@ -38,7 +39,7 @@ namespace SerjTm.Sample.TourSearcher.TuiProvider.Services
 
         public Hotel FindHotel(Guid id)
         {
-            return Storage.Hotels.By(id: id);
+            return Storage.HotelIndex.Find(id);
         }
     }
 
