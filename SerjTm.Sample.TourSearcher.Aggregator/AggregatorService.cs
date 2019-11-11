@@ -35,7 +35,7 @@ namespace SerjTm.Sample.TourSearcher.Aggregator
 
             cancelSource.Cancel();
 
-            var answers = searchTasks.Where(task => task.IsCompleted).Select(task => task.Result);
+            var answers = searchTasks.Where(task => task.IsCompleted && !task.IsFaulted).Select(task => task.Result).ToArray();
             if (!answers.Any())
                 throw new TimeoutException($"Ни один из ISearchService-ов не ответил за время {SearchTimeout})");
 

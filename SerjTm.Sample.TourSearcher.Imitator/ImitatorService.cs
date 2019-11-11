@@ -23,7 +23,7 @@ namespace SerjTm.Sample.TourSearcher.Imitator
         {
             var (_, cities, flyCities, hotels) = props;
 
-            return GenerateTours(10_000_000, provider, cities, flyCities, hotels).ToImmutableArray();
+            return GenerateTours(1_000_000, provider, cities, flyCities, hotels).ToImmutableArray();
         }
 
         static Country[] GenerateCountries(int count) => Enumerable.Range(1, count).Select(i => new Country(i, $"Country_{i}")).ToArray();
