@@ -8,6 +8,7 @@ using SerjTm.Sample.TourSearcher.Common.Model;
 using static SerjTm.Sample.TourSearcher.Common.Model.TourCategory;
 using SerjTm.Sample.TourSearcher.Common.Services;
 using SerjTm.Sample.TourSearcher.Aggregator;
+using SerjTm.Sample.TourSearcher.WebApi.Models;
 
 namespace SerjTm.Sample.TourSearcher.WebApi.Controllers
 {
@@ -32,19 +33,6 @@ namespace SerjTm.Sample.TourSearcher.WebApi.Controllers
         }
     }
 
-    public class SearchRequest
-    {
-        public City_Id StartCity;
-        public City_Id City;
-        public DateTime? StartDate;
-        public int? MinDays;
-        public int? MaxDays;
-        public int? PeopleCount;
-        public SearchOrder? Order;
-    }
-    public class SearchRequest_Hotel
-    {
-        public Guid Id;
-    }
+ 
 
 }

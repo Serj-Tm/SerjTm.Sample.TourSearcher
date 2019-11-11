@@ -28,6 +28,24 @@ namespace SerjTm.Sample.TourSearcher.WebApi.Controllers
         {
             return Ok(dictService.Cities());
         }
+        /// <summary>
+        /// Города вылета
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("startCities")]
+        public ActionResult<IEnumerable<City>> StartCities()
+        {
+            return Ok(dictService.FlyCities());
+        }
+        /// <summary>
+        /// Города прилета
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("endCities")]
+        public ActionResult<IEnumerable<City>> EndCities()
+        {
+            return Ok(dictService.FlyCities());
+        }
         [HttpGet("hotes")]
         public ActionResult<IEnumerable<Hotel>> Hotels()
         {

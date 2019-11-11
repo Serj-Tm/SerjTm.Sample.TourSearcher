@@ -32,6 +32,11 @@ namespace SerjTm.Sample.TourSearcher.TuiProvider.Services
             return Storage.Cities;
         }
 
+        public IEnumerable<City> FlyCities()
+        {
+            return Storage.FlyCities;
+        }
+
         public IEnumerable<Hotel> Hotels()
         {
             return Storage.Hotels;

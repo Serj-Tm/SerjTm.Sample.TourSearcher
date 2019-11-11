@@ -17,6 +17,12 @@ namespace SerjTm.Sample.TourSearcher.Common.Services
         /// <returns></returns>
         IEnumerable<City> Cities();
 
+        /// <summary>
+        /// Города прилета и вылета
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<City> FlyCities();
+
         IEnumerable<Hotel> Hotels();
 
         /// <summary>
