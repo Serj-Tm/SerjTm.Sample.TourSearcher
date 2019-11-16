@@ -20,7 +20,7 @@ namespace SerjTm.Sample.TourSearcher.TuiProvider.Services
         }
         private readonly MemoryTourStorage Storage;
 
-        public async Task<IEnumerable<Tour>> Search(int? peopleCount, FilterSpecification<Tour> filter, SearchOrder? order, CancellationToken cancellation)
+        public async Task<IEnumerable<Tour>> Search(int? peopleCount, FilterSpecification<Tour> filter, SearchOrder? order, CancellationToken cancellation = default)
         {
             await Task.Delay(TimeSpan.FromSeconds(new Random().NextDouble(3, 17)), cancellation);
 

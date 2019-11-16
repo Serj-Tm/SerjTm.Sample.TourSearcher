@@ -26,7 +26,7 @@ namespace SerjTm.Sample.TourSearcher.Aggregator
         readonly TimeSpan SearchTimeout;
         readonly PriorityProviderConfig PriorityProviderConfig;
 
-        public async Task<IEnumerable<Tour>> Search(int? peopleCount, FilterSpecification<Tour> filter, SearchOrder? order, CancellationToken cancellation)
+        public async Task<IEnumerable<Tour>> Search(int? peopleCount, FilterSpecification<Tour> filter, SearchOrder? order, CancellationToken cancellation = default)
         {
             var cancelSource = CancellationTokenSource.CreateLinkedTokenSource(cancellation);
 

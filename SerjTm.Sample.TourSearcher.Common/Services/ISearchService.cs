@@ -19,6 +19,6 @@ namespace SerjTm.Sample.TourSearcher.Common.Services
 
     public interface ISearchService
     {
-        Task<IEnumerable<Tour>> Search(int? peopleCount, FilterSpecification<Tour> filter, SearchOrder? order, CancellationToken token);
+        Task<IEnumerable<Tour>> Search(int? peopleCount, FilterSpecification<Tour> filter, SearchOrder? order, CancellationToken token = default);
     }
 }

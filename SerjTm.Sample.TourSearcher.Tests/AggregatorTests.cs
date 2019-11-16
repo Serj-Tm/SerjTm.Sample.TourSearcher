@@ -34,8 +34,6 @@ namespace SerjTm.Sample.TourSearcher.Tests
             var tour1 = new Tour(Guid.NewGuid(), "Tui", hotel, "luxe", city, DateTime.Today, DateTime.Today.AddDays(10), DateTime.Today, 10, 100.0m, 100.0m, "S7", 2);
             var tour2 = new Tour(Guid.NewGuid(), "Tui", hotel, "deluxe", city, DateTime.Today, DateTime.Today.AddDays(10), DateTime.Today, 10, 100.0m, 100.0m, "S7", 2);
 
-            var cancellation = new CancellationTokenSource().Token;
-
             var searcher1 = new Mock<ISearchService>();
             searcher1.Setup(mock => mock.Search(null, null, null, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(new[] {tour1}, TimeSpan.FromSeconds(0.25));
@@ -51,7 +49,7 @@ namespace SerjTm.Sample.TourSearcher.Tests
             var watch = new Stopwatch();
             watch.Start();
 
-            var result = await aggregator.Search(null, null, null, cancellation);
+            var result = await aggregator.Search(null, null, null);
 
             Assert.Equal(new[] { tour1, tour2 }, result);
             Assert.InRange(watch.Elapsed.TotalSeconds, 0.3, 0.4);
@@ -83,8 +81,6 @@ namespace SerjTm.Sample.TourSearcher.Tests
             var tour_other_highExtraPrice = new Tour(Guid.NewGuid(), "Other", hotel, "deluxe", city, DateTime.Today, DateTime.Today.AddDays(10), DateTime.Today, 10, 100.0m, 100.0m, "S7", 2);
             var tour_tui_highExtraPrice = tour_other_highExtraPrice.With(provider:"Tui", fullPrice: tour_other_highExtraPrice.FullPrice * (1 +  0.01m * highExtraPrice));
 
-            var cancellation = new CancellationTokenSource().Token;
-
             var searcher1 = new Mock<ISearchService>();
             searcher1.Setup(mock => mock.Search(null, null, null, It.IsAny<CancellationToken>()))
                 .ReturnsAsync(new[] { tour_other_lowExtraPrice, tour_other_highExtraPrice });
@@ -94,7 +90,7 @@ namespace SerjTm.Sample.TourSearcher.Tests
 
             var aggregator = new AggregatorService(new[] { searcher1.Object, searcher2.Object}, configuration);
 
-            var result = await aggregator.Search(null, null, null, cancellation);
+            var result = await aggregator.Search(null, null, null);
 
             Assert.Equal(new[] 
                 {

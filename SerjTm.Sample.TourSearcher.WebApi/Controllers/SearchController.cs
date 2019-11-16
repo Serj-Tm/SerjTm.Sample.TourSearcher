@@ -22,7 +22,7 @@ namespace SerjTm.Sample.TourSearcher.WebApi.Controllers
         public readonly ISearchService searchService;
 
         [HttpPost("api/search")]
-        public async Task<ActionResult<IEnumerable<Tour>>> Search(SearchRequest request, CancellationToken token)
+        public async Task<ActionResult<IEnumerable<Tour>>> Search(SearchRequest request, CancellationToken token = default)
         {
             var filter = StartCity(request.StartCity) 
                 & City(request.City) 

@@ -31,15 +31,13 @@ namespace SerjTm.Sample.TourSearcher.Tests
             var tour_extra_minDays = new Tour(Guid.NewGuid(), "Tui", hotel, "deluxe", city, DateTime.Today, DateTime.Today.AddDays(3), DateTime.Today, 3, 100.0m, 100.0m, "S7", 1);
             var tour_extra_maxDays = new Tour(Guid.NewGuid(), "Tui", hotel, "deluxe", city, DateTime.Today, DateTime.Today.AddDays(15), DateTime.Today, 15, 100.0m, 100.0m, "S7", 1);
 
-            var cancellation = new CancellationTokenSource().Token;
-
             var storage = new MemoryTourStorage(new[] { tour1, tour2, tour_extra_peopleCount, tour_extra_minDays, tour_extra_maxDays }.ToImmutableArray());
 
             var searcher = new MemorySearchService(storage);
 
             var filter = DaysRange(5, 12) & StartDate(DateTime.Today);
 
-            var result = await searcher.Search(2, filter, null, cancellation);
+            var result = await searcher.Search(2, filter, null);
 
             Assert.Equal(new[] { tour1, tour2 }.Select(tour => tour.Id), result.Select(tour => tour.Id));
         }
